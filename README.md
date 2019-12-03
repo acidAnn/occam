@@ -1,4 +1,4 @@
-# ockham
+# occam
 Remove adjectives from a text to make it more stylistically concise :scissors:
 
 <3 For keyboardmonkee, redadmiral & schwukas
