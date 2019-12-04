@@ -11,7 +11,9 @@ nlp = spacy.load("de_core_news_sm")
 @click.option("--text", "-t", default="", help="the string with the text to be processed")
 @click.option("--count", "-c", is_flag=True, help="display the number of removed words")
 @click.option("--sub", "-s", default="", help="the string by which adjectives and adverbs shall be replaced")
-def ockham(filepath_, text, count, sub):
+@click.option("--adj", "-j", is_flag=True, help="only remove adjectives")
+@click.option("--adv", "-v", is_flag=True, help="only remove adverbs")
+def ockham(filepath_, text, count, sub, adj, adv):
     """Remove adjectives from a text to make it more stylistically concise."""
     input_text = ""
 
@@ -30,8 +32,17 @@ def ockham(filepath_, text, count, sub):
     result_text = ""
     counter = 0
 
+    if adj:
+        removables = ["ADJ"]
+
+    elif adv:
+        removables = ["ADV"]
+    
+    else:
+        removables = ["ADJ", "ADV"]
+
     for i, token in enumerate(doc):
-        if token.pos_ in ["ADJ", "ADV"]:
+        if token.pos_ in removables:
             counter += 1
             if sub:
                 result_text += sub
