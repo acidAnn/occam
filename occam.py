@@ -8,23 +8,24 @@ nlp = spacy.load("de_core_news_sm")
 
 @click.command()
 @click.option("--file", "-f", "filepath_", default="", help="the file with the text to be processed")
-@click.option("--str", "-s", "str_", default="", help="the string with the text to be processed")
+@click.option("--text", "-t", default="", help="the string with the text to be processed")
 @click.option("--count", "-c", is_flag=True, help="display the number of removed words")
-def ockham(filepath_, str_, count):
+@click.option("--sub", "-s", default="", help="the string by which adjectives and adverbs shall be replaced")
+def ockham(filepath_, text, count, sub):
     """Remove adjectives from a text to make it more stylistically concise."""
-    text = ""
+    input_text = ""
 
     if filepath_:
         with open(filepath_) as f:
-            text = f.read()
+            input_text = f.read()
 
-    if str_:
-        text += str_
+    if text:
+        input_text += text
 
-    if not text:
-        raise click.BadParameter("you must supply the option --file or --str for input")
+    if not input_text:
+        raise click.BadParameter("you must supply the option --file or --str for input_text")
 
-    doc = nlp(text)
+    doc = nlp(input_text)
 
     result_text = ""
     counter = 0
@@ -32,6 +33,16 @@ def ockham(filepath_, str_, count):
     for i, token in enumerate(doc):
         if token.pos_ in ["ADJ", "ADV"]:
             counter += 1
+            if sub:
+                result_text += sub
+
+                if (
+                    i < len(doc) - 1
+                    and token.pos_ != "SPACE"
+                    and token.nbor().pos_ not in ["PUNCT", "SPACE", "X"]
+                ):
+                    result_text += " "
+
 
         else:
             result_text += token.text
