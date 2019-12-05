@@ -57,6 +57,7 @@ def ockham(filepath_, text, count, sub, adj, adv):
 
         else:
             result_text += token.text
+
             if (
                 i < len(doc) - 1
                 and token.pos_ != "SPACE"
