@@ -1,76 +1,40 @@
 # occam
-Remove adjectives from a text to make it more stylistically concise :scissors:
+Remove adjectives and adverbs from a text.
 
-:heart: For keyboardmonkee, redadmiral & schwukas
+Inspired by the principle of Occam's razor :scissors::
+> It is pointless to do with more what can be done with fewer.
+William of Ockham (ca.1287-1347), [Summa Totius Logicae](https://en.wikiquote.org/wiki/William_of_Ockham)
+
+:heart: --- for :ox: keeboardmonkee, :butterfly: redadmiral & :crab: schwukas --- :heart:
+
+Happy to use [spaCy](spacy.io) :rocket:.
 
 ## setup
 ```sh
+# create a virtual environment
 $ python -m venv ./venv
-$ python -m spacy download de
+
+# install required dependencies
 $ pip install -r requirements.txt
+
+# download the German language model by spaCy
+$ python -m spacy download de
 ```
 
-## example
-["Sehnsucht" by Joseph von Eichendorff](https://de.wikisource.org/wiki/Sehnsucht_(Eichendorff_II))
+## usage
 ```
-Sehnsucht.
+Usage: occam.py [OPTIONS]
 
-Es schienen so golden die Sterne,
-Am Fenster ich einsam stand
-Und hörte aus weiter Ferne
-Ein Posthorn im stillen Land.
-Das Herz mir im Leib entbrennte,
-Da hab’ ich mir heimlich gedacht:
-Ach, wer da mitreisen könnte
-In der prächtigen Sommernacht!
+  Remove adjectives and adverbs from text.
 
-Zwei junge Gesellen gingen
-Vorüber am Bergeshang,
-Ich hörte im Wandern sie singen
-Die stille Gegend entlang:
-Von schwindelnden Felsenschlüften,
-Wo die Wälder rauschen so sacht,
-Von Quellen, die von den Klüften
-Sich stürzen in die Waldesnacht.
-
-Sie sangen von Marmorbildern,
-Von Gärten, die über’m Gestein
-In dämmernden Lauben verwildern,
-Palästen im Mondenschein,
-Wo die Mädchen am Fenster lauschen,
-Wann der Lauten Klang erwacht,
-Und die Brunnen verschlafen rauschen
-In der prächtigen Sommernacht. – 
-```
-
-ockham version:
-```
-Sehnsucht.
-
-Es schienen die Sterne,
-Am Fenster ich stand
-Und hörte aus Ferne
-Ein Posthorn im Land.
-Das Herz mir im Leib entbrennte,
-Da hab ’ ich mir gedacht:
-Ach, wer mitreisen könnte
-In der Sommernacht!
-
-Zwei Gesellen gingen
-Vorüber am Bergeshang,
-Ich hörte im Wandern sie 
-Die Gegend entlang:
-Von Felsenschlüften,
-die Wälder rauschen sacht,
-Von Quellen, die von den Klüften
-Sich stürzen in die Waldesnacht.
-
-Sie sangen von Marmorbildern,
-Von Gärten, die über ’m Gestein
-In Lauben verwildern,
-Palästen im Mondenschein,
-die Mädchen am Fenster lauschen,
-der Klang erwacht,
-Und die Brunnen verschlafen 
-In der Sommernacht.–
+Options:
+  -f, --file TEXT    File with text input.
+  -t, --text TEXT    String with text input.
+  -o, --output TEXT  Path to output file (optional, otherwise print to CLI).
+  -j, --adj          Only remove adjectives (default: remove adjectives and
+                     adverbs).
+  -v, --adv          Only remove adverbs.
+  -s, --sub TEXT     String by which adjectives and adverbs shall be replaced.
+  -c, --count        Display the number of removed words.
+  --help             Show this message and exit.
 ```
