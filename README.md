@@ -15,7 +15,7 @@ The simplest solution is most likely the right one - this also holds true for wr
 
 An easy way to start is to reconsider how a text uses adjectives and adverbs. Both can contribute to expressiveness, but they can also make a text feel clumsy if they only serve as embellishments.
 
-**occam** to the rescue! **occam** shows how your text would look without adjectives and adverbs. Thus, it helps you to reconsider how you could make your text more concise and how to use your adjectives and adverbs purposefully.
+**occam** to the rescue! **occam** shows how your text would look without adjectives and adverbs. Thus, it helps you to reconsider how you could make your text more concise.
 
 ## Setup
 ```sh
