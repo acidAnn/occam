@@ -3,13 +3,20 @@ Remove adjectives and adverbs from text.
 
 A CLI tool for German text, powered by the NLP rocket science of [spaCy](spacy.io) :rocket:.
 
-:heart: For :ox: keeboardmonkee, :butterfly: redadmiral & :crab: schwukas :heart:
+:heart: For :ox: keyboardmonkee, :butterfly: redadmiral & :crab: schwukas :heart:
 
 ## Philosophy
-Inspired by the principle of Occam's razor :scissors::
+**But why?**
+Well, that is an excellent question.
+
+Inspired by the principle of **Occam's razor** :scissors::
 > It is pointless to do with more what can be done with fewer.
 
 William of Ockham (ca.1287-1347), [Summa Totius Logicae](https://en.wikiquote.org/wiki/William_of_Ockham)
+
+*The simplest solution is most likely the right one* - this also holds true for writing. However, one is often tempted to embellish texts with numerous adjectives and adverbs. That is not to say that adjectives and adverbs have no purpose in text - but it can be problematic if one uses them without considering if they really contribute to the gist of what one wants to express.
+
+occam shows how your text would look without adjectives and adverbs. Thus, it helps you to reconsider how you could make your text more concise.
 
 ## Setup
 ```sh
