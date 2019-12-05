@@ -1,7 +1,7 @@
 # occam
-Remove adjectives and adverbs from a text.
+Remove adjectives and adverbs from text.
 
-A CLI tool for German text, happy to use [spaCy](spacy.io) :rocket:.
+A CLI tool for German text, powered by the NLP rocket science of [spaCy](spacy.io) :rocket:.
 
 :heart: For :ox: keeboardmonkee, :butterfly: redadmiral & :crab: schwukas :heart:
 
