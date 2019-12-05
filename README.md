@@ -1,13 +1,15 @@
 # occam
 Remove adjectives and adverbs from a text.
 
+A CLI tool for German text, happy to use [spaCy](spacy.io) :rocket: and [click](https://click.palletsprojects.com/en/7.x/).
+
 Inspired by the principle of Occam's razor :scissors::
 > It is pointless to do with more what can be done with fewer.
+
 William of Ockham (ca.1287-1347), [Summa Totius Logicae](https://en.wikiquote.org/wiki/William_of_Ockham)
 
 :heart: --- for :ox: keeboardmonkee, :butterfly: redadmiral & :crab: schwukas --- :heart:
 
-Happy to use [spaCy](spacy.io) :rocket:.
 
 ## setup
 ```sh
@@ -20,6 +22,7 @@ $ pip install -r requirements.txt
 # download the German language model by spaCy
 $ python -m spacy download de
 ```
+
 
 ## usage
 ```
